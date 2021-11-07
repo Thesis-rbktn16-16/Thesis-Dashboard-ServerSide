@@ -36,7 +36,7 @@ var StationModel = mongoose.model("station", createStationSchema);
 
 var CreateBicycleSchema = mongoose.Schema(
   {
-    bikeId: { type: String, required: true },
+    bikeId: { type: String, required: false },
     category: { type: String, required: true },
     description: { type: String, required: true },
     photo: { type: String, required: true },
