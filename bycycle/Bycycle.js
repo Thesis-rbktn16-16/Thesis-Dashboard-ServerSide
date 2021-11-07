@@ -4,9 +4,9 @@ mongoose.Promise = global.Promise;
 
 var adminSchema = mongoose.Schema(
   {
-    User: { type: String, unique: true, required: true },
-    Password: { type: String, required: true },
-    Email: { type: String, unique: true, required: true },
+    User: { type: String, unique: false, required: false },
+    Password: { type: String, required: false },
+    Email: { type: String, unique: false, required: false },
   },
   {
     timestamps: true,
@@ -15,31 +15,25 @@ var adminSchema = mongoose.Schema(
 
 var AdminModel = mongoose.model("ADMIN", adminSchema);
 
-var createStationSchema = mongoose.Schema(
+var CreateStationSchema = mongoose.Schema(
   {
-    location: { type: String, required: true },
-    numberOfBikes: { type: Number, required: true },
-    address: { type: String, required: true },
-    contact: { type: String, required: true },
-    Bicycle: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "bicycle",
-      },
-    ],
+    location: { type: String, required: false },
+    numberOfBikes: { type: Number, required: false },
+    address: { type: String, required: false },
+    contact: { type: String, required: false },
   },
   {
     timestamps: true,
   }
 );
-var StationModel = mongoose.model("station", createStationSchema);
+var StationModel = mongoose.model("station", CreateStationSchema);
 
 var CreateBicycleSchema = mongoose.Schema(
   {
     bikeId: { type: String, required: false },
-    category: { type: String, required: true },
-    description: { type: String, required: true },
-    photo: { type: String, required: true },
+    category: { type: String, required: false },
+    description: { type: String, required: false },
+    photo: { type: String, required: false },
   },
   {
     timestamps: true,
@@ -49,11 +43,11 @@ var BicycleModel = mongoose.model("Bicycle", CreateBicycleSchema);
 
 var CreateSuggestionSchema = mongoose.Schema(
   {
-    location: { type: String, required: true },
-    description: { type: String, required: true },
-    photo: { type: String, required: true },
-    duration: { type: String, required: true },
-    distance: { type: String, required: true },
+    location: { type: String, required: false },
+    description: { type: String, required: false },
+    photo: { type: String, required: false },
+    duration: { type: String, required: false },
+    distance: { type: String, required: false },
   },
   {
     timestamps: true,

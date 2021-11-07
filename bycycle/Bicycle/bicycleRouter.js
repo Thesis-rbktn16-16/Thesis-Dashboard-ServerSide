@@ -1,7 +1,7 @@
 var bicycleRouter = require("express").Router();
 var bicycleController = require("../Bicycle/bicycleController");
 
-studentRouter
+bicycleRouter
   .route("/bicycle/:id")
   //all will take the id of the teacher
   .get(bicycleController.getBicycle)

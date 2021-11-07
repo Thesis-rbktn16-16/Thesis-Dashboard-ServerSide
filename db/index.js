@@ -3,7 +3,7 @@ var mongoUri = "mongodb://localhost/bycycle-dashboard";
 
 //
 var db = mongoose.connect(mongoUri).then(() => {
-  console.log("data connected ");
+  console.log("database connected ");
 });
 
 module.exports = db;

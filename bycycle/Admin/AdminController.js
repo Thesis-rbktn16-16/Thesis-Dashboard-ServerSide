@@ -1,4 +1,4 @@
-var Auth = require("../Athuentication/Auth");
+var Auth = require("../Authentication/Auth");
 var Bycycle = require("../Bycycle");
 //
 exports.createAdmin = (req, res) => {

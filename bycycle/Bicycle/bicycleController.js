@@ -1,7 +1,8 @@
 var Bycycle = require("../Bycycle");
-//
+const { json } = require("body-parser");
+
 exports.createBicycle = function (req, res) {
-  const BicycleData = req.body;
+  const BicycleData = JSON.parse(req.body);
 
   Bycycle.BicycleModel.create(BicycleData)
     .then((data) => {
