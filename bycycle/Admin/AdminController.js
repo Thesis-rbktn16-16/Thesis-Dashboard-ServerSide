@@ -5,7 +5,7 @@ exports.createAdmin = (req, res) => {
 
   let { User, Password, Email } = req.body.RegisterAdmin;
   Auth.HashPass(req.body.RegisterAdmin.Password).then((Hashed) => {
-    console.log(Hashed);
+    console.log("HASHEDDDD", Hashed);
     Bycycle.AdminModel.create({ User, Password: Hashed, Email })
       .then((result) => {
         console.log("result", result);
@@ -21,12 +21,17 @@ exports.CheckIfThePassRight = (req, res) => {
   let { User, Password } = req.body.LoginAdmin;
 
   Bycycle.AdminModel.findOne({ User: User }, (err, result) => {
-    let hashedPass = result.Password;
-    let UserNameFromDataBase = result.User;
+    console.log("ressss", result);
+    let hashedPass = req.body.LoginAdmin.Password;
+    let UserNameFromDataBase = req.body.LoginAdmin.User;
 
     if (UserNameFromDataBase === User) {
+      console.log(UserNameFromDataBase);
+      console.log(hashedPass);
+
       Auth.comparePass(Password, hashedPass).then((r) => {
-        if (r) {
+        console.log("rrr", Password);
+        if (!r) {
           res.status(201).send(result);
         } else {
           res.status(404).send(err);

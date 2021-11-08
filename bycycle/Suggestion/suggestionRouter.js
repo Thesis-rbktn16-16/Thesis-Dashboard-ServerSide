@@ -2,7 +2,7 @@ var suggestionRoute = require("express").Router();
 var suggestionController = require("./suggestionController");
 
 suggestionRoute
-  .route("/addsuggestion/:id")
+  .route("/addsuggestion")
   .post(suggestionController.createSuggestion)
   .get(suggestionController.findSuggestion)
   .delete(suggestionController.deleteSuggestion);

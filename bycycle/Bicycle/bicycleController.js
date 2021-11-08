@@ -22,7 +22,14 @@ exports.findBicycle = (req, res) => {
 };
 
 // get all the Bicycle
-exports.getBicycle = (req, res) => {};
+exports.getBicycle = (req, res) => {
+  Bycycle.BicycleModel.find({}, (err, result) => {
+    if (err) {
+      res.status(404).send(err);
+    }
+    res.status(200).send(result);
+  });
+};
 
 // update Bicycle
 exports.updateBicycle = (req, res) => {};
