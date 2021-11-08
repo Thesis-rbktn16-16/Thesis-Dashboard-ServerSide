@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 const db = require("../db/index.js");
 mongoose.Promise = global.Promise;
+var Schema = mongoose.Schema;
 
 var adminSchema = mongoose.Schema(
   {

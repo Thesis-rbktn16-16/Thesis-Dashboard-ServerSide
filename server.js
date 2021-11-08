@@ -1,17 +1,18 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var morgan = require("morgan");
-var station = require("./Bycycle/Station/stationRouter");
-var bicycle = require("./Bycycle/Bicycle/bicycleRouter");
-var admin = require("./Bycycle/Admin/AdminRouter");
-var suggestion = require("./Bycycle/Suggestion/suggestionRouter");
+
 var app = express();
 var cors = require("cors");
 app.use(cors());
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/../client/dist"));
+// app.use(express.static(__dirname + "/../client/dist"));
+var station = require("./Bycycle/Station/stationRouter");
+var bicycle = require("./Bycycle/Bicycle/bicycleRouter");
+var admin = require("./Bycycle/Admin/AdminRouter");
+var suggestion = require("./Bycycle/Suggestion/suggestionRouter");
 
 app.use("/", admin);
 app.use("/", station);

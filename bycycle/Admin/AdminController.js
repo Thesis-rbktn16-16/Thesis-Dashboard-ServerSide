@@ -6,7 +6,8 @@ exports.createAdmin = (req, res) => {
   let { User, Password, Email } = req.body;
   Auth.HashPass(Password).then((Hashed) => {
     Bycycle.AdminModel.create({ User, Password: Hashed, Email })
-      .then(() => {
+      .then((result) => {
+        console.log("result", result);
         res.sendStatus(201);
       })
       .catch((err) => {
@@ -18,7 +19,7 @@ exports.createAdmin = (req, res) => {
 exports.CheckIfThePassRight = (req, res) => {
   let { User, Password } = req.body;
 
-  School.AdminModel.findOne({ User: User }, (err, result) => {
+  Bycycle.AdminModel.findOne({ User: User }, (err, result) => {
     let hashedPass = result.Password;
     let UserNameFromDataBase = result.User;
 

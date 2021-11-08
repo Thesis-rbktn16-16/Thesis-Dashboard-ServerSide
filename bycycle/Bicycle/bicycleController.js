@@ -1,13 +1,11 @@
 var Bycycle = require("../Bycycle");
-const { json } = require("body-parser");
 
 exports.createBicycle = function (req, res) {
-  const BicycleData = JSON.parse(req.body);
-
-  Bycycle.BicycleModel.create(BicycleData)
+  const BicycleData = req.body;
+  Bycycle.BicycleModel.create(req.body)
     .then((data) => {
+      res.status(200).send(data);
       console.log(data);
-      res.status(200).send("new bicycle added to database");
     })
     .catch((err) => {
       console.log(err);
