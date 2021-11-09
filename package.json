@@ -4,7 +4,7 @@
   "description": "Thesis dashboard",
   "main": "Thesis-Dashboard-ServerSide/index.js",
   "scripts": {
-    "start": "nodemon server",
+    "start": "node server",
     "seed:db": "node Thesis-Dashboard-ServerSide/db/seed",
     "test": "mocha test"
   },
