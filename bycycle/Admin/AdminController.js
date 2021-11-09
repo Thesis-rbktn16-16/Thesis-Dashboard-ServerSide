@@ -8,7 +8,7 @@ exports.createAdmin = (req, res) => {
     console.log("HASHEDDDD", Hashed);
     Bycycle.AdminModel.create({ User, Password: Hashed, Email })
       .then((result) => {
-        console.log("result", result);
+        console.log(result);
         res.sendStatus(201);
       })
       .catch((err) => {
