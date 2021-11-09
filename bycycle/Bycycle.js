@@ -11,6 +11,7 @@ var adminSchema = mongoose.Schema(
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 
@@ -18,13 +19,17 @@ var AdminModel = mongoose.model("ADMIN", adminSchema);
 
 var CreateStationSchema = mongoose.Schema(
   {
-    location: { type: String, required: false },
-    numberOfBikes: { type: Number, required: false },
-    address: { type: String, required: false },
-    contact: { type: String, required: false },
+    Name: { type: String, required: false },
+    Email: { type: String, required: false },
+    Situation: { type: String, required: false },
+    Incoming: { type: String, required: false },
+    City: { type: String, required: false },
+    Status: { type: String, required: false },
+    BikeCount: { type: String, required: false },
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 var StationModel = mongoose.model("station", CreateStationSchema);
@@ -38,6 +43,7 @@ var CreateBicycleSchema = mongoose.Schema(
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 var BicycleModel = mongoose.model("Bicycle", CreateBicycleSchema);
@@ -52,6 +58,7 @@ var CreateSuggestionSchema = mongoose.Schema(
   },
   {
     timestamps: true,
+    versionKey: false,
   }
 );
 var SuggestionModel = mongoose.model("Suggestion", CreateSuggestionSchema);

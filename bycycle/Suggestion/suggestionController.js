@@ -13,7 +13,14 @@ exports.createSuggestion = (req, res) => {
     });
 };
 
-exports.allSuggestion = (req, res) => {};
+exports.allSuggestion = (req, res) => {
+  Bycycle.SuggestionModel.find({}, (err, result) => {
+    if (err) {
+      res.status(404).send(err);
+    }
+    res.status(200).send(result);
+  });
+};
 
 exports.findSuggestion = (req, res) => {};
 
