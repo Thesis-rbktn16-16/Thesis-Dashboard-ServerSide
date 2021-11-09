@@ -1,6 +1,5 @@
 var mongoose = require("mongoose");
-var mongoUri =
-  "mongodb+srv://Wissem:brinis@brinisdatabase.gedvh.mongodb.net/bycycle?retryWrites=true&w=majority";
+var mongoUri = process.env.mongoUrl;
 
 //
 var db = mongoose.connect(mongoUri).then(() => {
