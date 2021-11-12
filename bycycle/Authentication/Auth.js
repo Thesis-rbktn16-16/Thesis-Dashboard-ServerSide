@@ -5,7 +5,6 @@ const bcrypt = require("bcrypt");
 
 // }
 exports.HashPass = (passwordFromClient, saltRound = 10) => {
-  console.log("passss", passwordFromClient);
   return bcrypt.hash(passwordFromClient, saltRound);
 };
 

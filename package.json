@@ -1,10 +1,10 @@
 {
-  "name": "Bycycle",
+  "name": "bycycle",
   "version": "1.0.0",
   "description": "Thesis dashboard",
   "main": "Thesis-Dashboard-ServerSide/index.js",
   "scripts": {
-    "start": "nodemon server",
+    "start": "nodemon server.js",
     "seed:db": "node Thesis-Dashboard-ServerSide/db/seed",
     "test": "mocha test"
   },

@@ -1,6 +1,8 @@
 var mongoose = require("mongoose");
 var mongoUri =
-  "mongodb+srv://Wissem:brinis@brinisdatabase.gedvh.mongodb.net/bycycle?retryWrites=true&w=majority";
+  "mongodb+srv://admin:imad123@adminauthbycycle.1x2zz.mongodb.net/test";
+// var mongoUri =
+//   "mongodb+srv://Wissem:brinis@brinisdatabase.gedvh.mongodb.net/bycycle?retryWrites=true&w=majority";
 
 //
 var db = mongoose.connect(mongoUri).then(() => {
