@@ -35,7 +35,7 @@ exports.CheckIfThePassRight = (req, res) => {
 
       Auth.comparePass(Pass, hashedPass).then((r) => {
         console.log("rrr", Pass);
-        if (!r) {
+        if (r) {
           res.status(201).send(result);
         } else {
           res.status(404).send(err);
