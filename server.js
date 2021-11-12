@@ -22,11 +22,8 @@ app.use("/", station);
 app.use("/", bicycle);
 app.use("/", suggestion);
 
-var PORT = 3002;
+var port = process.env.PORT || 3002;
 
-app.listen(PORT, function () {
-  console.log(
-    "bycycle-dashboard-MongoDB RESTful API listening on http://localhost:" +
-      PORT
-  );
+app.listen(port, function () {
+  console.log("bycycle-dashboard-MongoDB RESTful API listening on :" + port);
 });
