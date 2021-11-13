@@ -29,7 +29,6 @@ var CreateStationSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-    versionKey: false,
   }
 );
 var StationModel = mongoose.model("station", CreateStationSchema);
