@@ -1,13 +1,13 @@
-var bicycleRouter = require("express").Router();
-var eventController = require("../Bicycle/eventController");
+var eventRouter = require("express").Router();
+var eventController = require("../Event/eventController");
 
-bicycleRouter
+eventRouter
   .route("/event")
-  .get(eventController.getBicycle)
-  .post(eventController.createBicycle)
-  .put(eventController.updateBicycle)
-  .delete(eventController.deleteBicycle);
+  .get(eventController.getEvent)
+  .post(eventController.createEvent)
+  .put(eventController.updateEvent)
+  .delete(eventController.deleteEvent);
 
-bicycleRouter.route("/findBicycle").post(eventController.findBicycle);
+EventRouter.route("/findEvent").post(eventController.findEvent);
 
-module.exports = bicycleRouter;
+module.exports = EventRouter;

@@ -1,9 +1,11 @@
 var Bycycle = require("../Bycycle");
 
 exports.createEvent = function (req, res) {
+  console.log("hey", req.body);
   const EventData = req.body;
   Bycycle.EventModel.create(req.body)
     .then((data) => {
+      console.log(data);
       res.status(200).send(data);
       console.log(data);
     })
@@ -13,8 +15,6 @@ exports.createEvent = function (req, res) {
 };
 
 exports.findEvent = (req, res) => {
-  let EventName = req.body.bikeId;
-
   Bycycle.EventModel.findOne({ EventName }, (err, result) => {
     if (err) res.status(403).send(err);
     res.status(200).send(result);
