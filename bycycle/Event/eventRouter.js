@@ -8,6 +8,6 @@ eventRouter
   .put(eventController.updateEvent)
   .delete(eventController.deleteEvent);
 
-EventRouter.route("/findEvent").post(eventController.findEvent);
+eventRouter.route("/findEvent").post(eventController.findEvent);
 
-module.exports = EventRouter;
+module.exports = eventRouter;

@@ -13,11 +13,13 @@ var station = require("./Bycycle/Station/stationRouter");
 var bicycle = require("./Bycycle/Bicycle/bicycleRouter");
 var admin = require("./Bycycle/Admin/AdminRouter");
 var suggestion = require("./Bycycle/Suggestion/suggestionRouter");
+var event = require("./Bycycle/event/eventRouter");
 
 app.use("/", admin);
 app.use("/", station);
 app.use("/", bicycle);
 app.use("/", suggestion);
+app.use("/", event);
 
 var PORT = 3002;
 
