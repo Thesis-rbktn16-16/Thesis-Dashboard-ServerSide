@@ -3,8 +3,11 @@ var bodyParser = require("body-parser");
 var morgan = require("morgan");
 
 var app = express();
+
 var cors = require("cors");
 app.use(cors());
+
+app.use(express.json());
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,11 +24,8 @@ app.use("/", bicycle);
 app.use("/", suggestion);
 app.use("/", event);
 
-var PORT = 3002;
+var port = process.env.PORT || 3002;
 
-app.listen(PORT, function () {
-  console.log(
-    "bycycle-dashboard-MongoDB RESTful API listening on http://localhost:" +
-      PORT
-  );
+app.listen(port, function () {
+  console.log("bycycle-dashboard-MongoDB RESTful API listening on :" + port);
 });
