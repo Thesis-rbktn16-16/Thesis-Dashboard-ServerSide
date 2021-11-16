@@ -29,7 +29,6 @@ var CreateStationSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-    versionKey: false,
   }
 );
 var StationModel = mongoose.model("station", CreateStationSchema);
@@ -47,6 +46,20 @@ var CreateBicycleSchema = mongoose.Schema(
   }
 );
 var BicycleModel = mongoose.model("Bicycle", CreateBicycleSchema);
+
+var CreateEventSchema = mongoose.Schema(
+  {
+    title: { type: String, required: false },
+    startDate: { type: String, required: false },
+    endDate: { type: String, required: false },
+    location: { type: String, required: false },
+  },
+  {
+    timestamps: false,
+    versionKey: false,
+  }
+);
+var EventModel = mongoose.model("Event", CreateEventSchema);
 
 var CreateSuggestionSchema = mongoose.Schema(
   {
@@ -68,4 +81,5 @@ module.exports = {
   SuggestionModel,
   BicycleModel,
   StationModel,
+  EventModel,
 };
