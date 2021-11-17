@@ -7,8 +7,7 @@ exports.createAdmin = (req, res) => {
   Auth.HashPass(req.body.RegisterAdmin.Password).then((Hashed) => {
     console.log("HASHEDDDD", Hashed);
     Bycycle.AdminModel.create({ User, Password: Hashed, Email })
-      .then((result) => {
-        console.log(result);
+      .then(() => {
         res.sendStatus(201);
       })
       .catch((err) => {
