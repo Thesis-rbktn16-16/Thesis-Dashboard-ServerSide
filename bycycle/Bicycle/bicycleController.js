@@ -5,7 +5,6 @@ exports.createBicycle = function (req, res) {
   Bycycle.BicycleModel.create(req.body)
     .then((data) => {
       res.status(200).send(data);
-      console.log(data);
     })
     .catch((err) => {
       console.log(err);
